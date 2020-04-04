@@ -1,0 +1,18 @@
+.centerDiv {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin: 10px auto;
+}
+
+.svgMain {
+    position: absolute;
+    left: 0;
+    /*  top: 50%; */
+    width: 100%;
+    height: 500px;
+    /*  margin: 0 auto; */
+    background-color: #000;
+    border: 1px solid black;
+    opacity: .5
+}

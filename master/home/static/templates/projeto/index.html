@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Blank</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/position_map.css' %}">
+
+    <!-- incluir paginas HTML via tag w3-include-html -->
+    <script src="{% static 'js/includeHTML.js' %}"></script>
+
+
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7ss4Z2yopkKlWYNmPqGnyl8VmkemAvzU&libraries=places,geometry"></script> -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALe8A03OiJCV9dZOTILNsAA4slRXVLHCE&libraries=places,geometry"></script>
+
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div w3-include-html="{% static 'includes/side_bar.html' %}"></div>
+
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <div w3-include-html="{% static 'includes/top_bar.html' %}"></div>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading 
+                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    -->
+                    <!--    COMENÇANDO O CONTEUDO DO MAPA -->
+                    <div class="row">
+                        <div class="col-8">
+                            <div id="map" class="centerDiv">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+
+                                <div class="col-9">
+                                    <form class="form-inline">
+                                        <div class="form-group" style="width: 50px;">
+                                            <input type="text" readonly class="form-control-plaintext" value="Área">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="txtRadius" maxlength="4" size="4" style="align-items: initial;" value="500">
+                                            <span class="ml-2">metros</span>
+                                            <a href="#" id='createCircle' class="btn btn-primary btn-icon-split ml-2">
+                                                <span class="icon text-white-50">
+                                                    <i class="far fa-circle"></i>                                                
+                                                </span>
+
+                                            </a>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <small>Minimo de 100 e máximo de 2000 metros</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label>Categorias</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="cbxAlimentacao">
+                                            <label class="custom-control-label" for="cbxAlimentacao">                                                
+                                                Alimentação
+                                                <i class="fas fa-circle" style="color:#6A5ACD;"></i>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="cbxFinancas">
+                                            <label class="custom-control-label" for="cbxFinancas">
+                                                Finanças
+                                                <i class="fas fa-circle" style="color:#4682B4;"></i>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="cbxAdministrativo">
+                                            <label class="custom-control-label" for="cbxAdministrativo">
+                                                Administrativo
+                                                <i class="fas fa-circle" style="color:#D2691E;"></i>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="cbxCultural">
+                                            <label class="custom-control-label" for="cbxCultural">
+                                                Cultural
+                                                <i class="fas fa-circle" style="color:#FFD700;"></i>
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="cbxEntretenimento">
+                                            <label class="custom-control-label" for="cbxEntretenimento">
+                                                Entretenimento
+                                                <i class="fas fa-circle" style="color:#006400;"></i></label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="cbxSaude">
+                                        <label class="custom-control-label" for="cbxSaude">
+                                            Saúde
+                                            <i class="fas fa-circle" style="color:#ADFF2F;"></i>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="cbxServicos">
+                                        <label class="custom-control-label" for="cbxServicos">
+                                            Serviços
+                                            <i class="fas fa-circle" style="color:#00008B;"></i>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="cbxReligioso">
+                                        <label class="custom-control-label" for="cbxReligioso">
+                                            Religioso
+                                            <i class="fas fa-circle" style="color:#8B4513;"></i>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="cbxComercio">
+                                        <label class="custom-control-label" for="cbxComercio">
+                                            Comercio
+                                            <i class="fas fa-circle" style="color:#BC8F8F;"></i>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="cbxTransporte">
+                                        <label class="custom-control-label" for="cbxTransporte">
+                                            Transporte
+                                            <i class="fas fa-circle" style="color:#00FF7F;"></i>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox small">
+                                        <input type="checkbox" class="custom-control-input" id="cbxDiversos">
+                                        <label class="custom-control-label" for="cbxDiversos">
+                                            Diversos
+                                            <i class="fas fa-circle" style="color:#8B0000;"></i>
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form class="form-inline">
+                                        <div class="form-group mb-2;" style=" width: 80px; ">
+                                            <input type="text" readonly class="form-control-plaintext" value="Latência">
+                                        </div>
+                                        <div class="form-group mb-2;">
+                                            <input type="text" class="form-control" id="latencia" maxlength="4 " size="4" value="1000">
+                                            <span class="ml-2">Em milissegundos</span>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-6 mt-3">
+                                    <a href="# " id='places' class="btn btn-primary btn-icon-split ">
+                                        <span class="icon text-white-50 ">
+                                        <i class="fas fa-flag "></i>
+                                    </span>
+                                        <span class="text ">Coletar</span>
+                                    </a>
+                                </div>
+                                <div class="col-6 mt-3">
+                                    <a href="# " id='sumarize' class="btn btn-primary btn-icon-split ">
+                                        <span class="icon text-white-50 ">
+                                        <i class="fas fa-flag "></i>
+                                    </span>
+                                        <span class="text ">Sumarizar</span>
+                                    </a>
+                                </div>
+                            </div>
+                          <!--  <div class="row ">
+                                <div class="col-12 mt-2 ">
+                                    <label class="font-weight-bold ">Local: </label>
+                                    <span id="spnLocal ">Teste</span>
+                                </div>
+                            </div>
+                        -->
+                        </div>
+                    </div>
+
+
+
+                    <!-- TERMINANDO O CONTEUDO DO MAPA-->
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <div w3-include-html="{% static 'includes/footer.html' %} "></div>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <div w3-include-html="{% static 'includes/scroll_top.html' %}"></div>
+
+    <!-- Logout Modal-->
+    <div w3-include-html="{% static 'includes/logout_modal.html' %}"></div>
+
+    <script>
+        includeHTML();
+    </script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+    <script src="{% static 'config/categories.js' %}"></script>
+    <script src="{% static 'js/position_map.js' %}"></script>
+    <script src="{% static 'js/setup.js' %}"></script>
+
+</body>
+
+</html>
