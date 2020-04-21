@@ -145,7 +145,7 @@ $(document).ready(function() {
         }
     }
 
-    function summarizaArray() {
+    /* function summarizaArray() {
 
         squaresArray.forEach((element, index) => {
             var a = [],
@@ -171,6 +171,16 @@ $(document).ready(function() {
         });
         var myJson = JSON.stringify(squaresArray)
 
+        $.ajax({
+            type: 'POST',
+            url: "/transferDataToServer/",
+            data: { data: myJson },
+            dataType: 'json'
+        })
+    }
+    */
+    function sendData() {
+        var myJson = JSON.stringify(squaresArray)
         $.ajax({
             type: 'POST',
             url: "/transferDataToServer/",
@@ -407,7 +417,8 @@ $(document).ready(function() {
         drawSquares()
     })
     $("#sumarize").on('click', function() {
-        summarizaArray();
+        //summarizaArray();
+        sendData();
     })
 
     $('#places').on('click', function() {
